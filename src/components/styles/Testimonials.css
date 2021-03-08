@@ -22,15 +22,15 @@
 
 .pattern2 {
     width: 65%;
-    height: 15%;
+    height: 10%;
     bottom: 0;
     left: 0;
 }
 
 .pattern3 {
-    width: 25%;
-    height: 10%;
-    top: 55%;
+    width: 20%;
+    height: 8%;
+    top: 50%;
     left: 37.5%;
 }
 
@@ -58,8 +58,8 @@
 
 .btn-group {
     position: absolute;
-    bottom: calc(-30.67px / 2);
-    left: calc(50% - calc(92.75px / 2));
+    bottom: calc(-29.88px / 2);
+    left: calc(50% - calc(64px / 2));
 }
 
 .btn {
@@ -83,5 +83,29 @@
 .card-body {
     width: 90%;
     height: fit-content;
+    padding: 0;
+    margin-top: 6rem;
     flex: none;
+    text-align: center;
+}
+
+.card-text {
+    margin-bottom: 2rem;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    color:var(--color-option3);
+}
+
+.card-name {
+    margin-bottom: 0;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-option1);
+}
+
+.card-occupation {
+    margin-bottom: 0;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-option2);
 }
