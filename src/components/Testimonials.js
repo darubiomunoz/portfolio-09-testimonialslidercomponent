@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/Testimonials.css';
 
 import data from '../assets/data.json';
@@ -8,10 +8,35 @@ import pattern3 from '../assets/images/pattern-quotes.svg';
 import arrowLeft from '../assets/images/icon-prev.svg';
 import arrowRight from '../assets/images/icon-next.svg';
 
-const ComponentLogic = () => {}
+const ComponentLogic = () => {
+    const [ visible, setVisible ] = useState('testimonial1');
+    
+    const handleClick = () => {
+        const testimonials = document.querySelector('.testimonials');
+        const testimonial1 = testimonials.childNodes[3];
+        const testimonial2 = testimonials.childNodes[4];
+        
+        const showTestimonial1 = () => {
+            setVisible('testimonial1');
+            testimonial1.classList.remove('invisible');
+            testimonial2.classList.add('invisible');
+        }
+
+        const showTestimonial2 = () => {
+            setVisible('testimonial2');
+            testimonial1.classList.add('invisible');
+            testimonial2.classList.remove('invisible');
+        }
+
+        if(visible === 'testimonial1') showTestimonial2();
+        else showTestimonial1();
+    }
+
+    return { handleClick };
+}
 
 const Testimonials = () => {
-/*     const { handleLoad } = ComponentLogic(); */
+    const { handleClick } = ComponentLogic();
 
     return (
         <div className="testimonials">
@@ -24,10 +49,10 @@ const Testimonials = () => {
                         <div className="card-container" >
                             <img src={data.image} className="card-img-top" alt="Profile photograph" />
                             <div className="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" className="btn btn-light btn-lg left">
+                                <button type="button" className="btn btn-light btn-lg left" onClick={() => handleClick()}>
                                     <img className="button-arrow" src={arrowLeft} alt="Press to show the previous testimonial" />
                                 </button>
-                                <button type="button" className="btn btn-light btn-lg right">
+                                <button type="button" className="btn btn-light btn-lg right" onClick={() => handleClick()}>
                                     <img className="button-arrow" src={arrowRight} alt="Press to show the next testimonial" />
                                 </button>
                             </div>
