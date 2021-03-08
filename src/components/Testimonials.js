@@ -6,6 +6,8 @@ import imageTanya from '../assets/images/image-tanya.jpg';
 import pattern1 from '../assets/images/pattern-bg.svg';
 import pattern2 from '../assets/images/pattern-curve.svg';
 import pattern3 from '../assets/images/pattern-quotes.svg';
+import arrowLeft from '../assets/images/icon-prev.svg';
+import arrowRight from '../assets/images/icon-next.svg';
 
 const Testimonials = () => {
     return (
@@ -16,6 +18,14 @@ const Testimonials = () => {
             <div className="card">
                 <div className="card-container">
                     <img src= {imageJohn} className="card-img-top" alt="Profile photograph" />
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-light btn-lg left">
+                            <img className="button-arrow" src={arrowLeft} alt="Press to show the previous testimonial" />
+                        </button>
+                        <button type="button" class="btn btn-light btn-lg right">
+                            <img className="button-arrow" src={arrowRight} alt="Press to show the next testimonial" />
+                        </button>
+                    </div>
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">Card title</h5>

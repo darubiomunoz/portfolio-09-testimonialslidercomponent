@@ -16,4 +16,7 @@
     --zindex-modal: 1050;
     --zindex-popover: 1060;
     --zindex-tooltip: 1070;
+
+    --border-radius-image: .75rem;
+    --border-radius-btn: 45%;
 }

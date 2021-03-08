@@ -52,6 +52,34 @@
     position: relative;
 }
 
+.card-img-top {
+    border-radius: var(--border-radius-image);
+}
+
+.btn-group {
+    position: absolute;
+    bottom: calc(-30.67px / 2);
+    left: calc(50% - calc(92.75px / 2));
+}
+
+.btn {
+    border: none;
+}
+
+.right {
+    border-top-right-radius: var(--border-radius-btn);
+    border-bottom-right-radius: var(--border-radius-btn);
+}
+
+.left {
+    border-top-left-radius: var(--border-radius-btn);
+    border-bottom-left-radius: var(--border-radius-btn);
+}
+
+.button-arrow {
+    height: 60%;
+}
+
 .card-body {
     width: 90%;
     height: fit-content;
