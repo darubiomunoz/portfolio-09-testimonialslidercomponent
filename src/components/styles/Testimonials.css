@@ -1,0 +1,39 @@
+.testimonials {
+    width: 100%;
+    min-width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.pattern1,
+.pattern2,
+.pattern3 {
+    position: absolute;
+    z-index: var(--zindex-background);
+}
+
+.pattern1 {
+    width: 90%;
+    height: 40%;
+    top: 2.5rem;
+    left: 5%;
+}
+
+.pattern2 {
+    width: 65%;
+    height: 15%;
+    bottom: 0;
+    left: 0;
+}
+
+.pattern3 {
+    width: 25%;
+    height: 10%;
+    top: 50%;
+    left: 37.5%;
+}
+
+.card {
+    background-color: transparent;
+}
