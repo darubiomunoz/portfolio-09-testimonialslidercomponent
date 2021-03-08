@@ -1,10 +1,12 @@
 import React from 'react'
 import './App.css';
 
+import Testimonials from './components/Testimonials';
+
 const App = () => {
   return (
     <div className="App">
-      <h1>Ohhh shit. Here we go again.</h1>
+      <Testimonials />
     </div>
   );
 }
