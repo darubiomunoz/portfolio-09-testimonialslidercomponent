@@ -40,20 +40,20 @@ const Testimonials = () => {
 
     return (
         <div className="testimonials">
-            <img src={pattern1} className="pattern1" alt="background pattern" aria-hidden="true" />
-            <img src={pattern2} className="pattern2" alt="background pattern" aria-hidden="true" />
-            <img src={pattern3} className="pattern3" alt="background pattern" aria-hidden="true" />
+            <img src={pattern1} className="pattern1" alt="background pattern" aria-hidden="true" loading="lazy" />
+            <img src={pattern2} className="pattern2" alt="background pattern" aria-hidden="true" loading="lazy" />
+            <img src={pattern3} className="pattern3" alt="background pattern" aria-hidden="true" loading="lazy" />
             {data.map(data => {
                 return (
                     <div key={data.id} className={data.className}>
                         <div className="card-container" >
-                            <img src={data.image} className="card-img-top" alt="Profile photograph" />
+                            <img src={data.image} className="card-img-top" alt="Profile photograph" loading="lazy" />
                             <div className="btn-group" role="group" aria-label="Basic example">
                                 <button type="button" className="btn btn-light btn-lg left" onClick={() => handleClick()}>
-                                    <img className="button-arrow" src={arrowLeft} tabIndex="0" alt="Press to show the previous testimonial" />
+                                    <img className="button-arrow" src={arrowLeft} tabIndex="0" alt="Press to show the previous testimonial" loading="lazy" />
                                 </button>
                                 <button type="button" className="btn btn-light btn-lg right" onClick={() => handleClick()}>
-                                    <img className="button-arrow" src={arrowRight} alt="Press to show the next testimonial" />
+                                    <img className="button-arrow" src={arrowRight} alt="Press to show the next testimonial" loading="lazy" />
                                 </button>
                             </div>
                         </div>
