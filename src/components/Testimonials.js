@@ -59,8 +59,10 @@ const Testimonials = () => {
                         </div>
                         <div className="card-body">
                             <p className="card-text">{data.text}</p>
-                            <p className="card-name">{data.name}</p>
-                            <p className="card-occupation">{data.occupation}</p>
+                            <div className="card-profile">
+                                <p className="card-name">{data.name}</p>
+                                <p className="card-occupation">{data.occupation}</p>
+                            </div>
                         </div>
                     </div>
                 );
