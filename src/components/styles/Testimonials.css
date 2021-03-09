@@ -161,7 +161,28 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (width: 1024px) {
+    .pattern1 {
+        top: 7%;
+        width: 85%;
+    }
+
+    .pattern3 {
+        width: 15%;
+        top: 56%;
+    }
+
+    .card-container {
+        margin-top: 15rem;
+    }
+
+    .card-body {
+        width: 80%;
+        margin-top: 13rem;
+    }
+}
+
+@media (min-width: 1025px) {
     .pattern1 {
         width: 50%;
         height: 80%;
@@ -197,6 +218,12 @@
 
     .card-img-top {
         height: 100%;
+    }
+
+    .btn-group {
+        position: absolute;
+        bottom: calc(-29.88px / 2);
+        left: calc(20% - calc(64px / 2));
     }
 
     .card-body {
