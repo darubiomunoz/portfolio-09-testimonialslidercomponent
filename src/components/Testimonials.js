@@ -50,7 +50,7 @@ const Testimonials = () => {
                             <img src={data.image} className="card-img-top" alt="Profile photograph" />
                             <div className="btn-group" role="group" aria-label="Basic example">
                                 <button type="button" className="btn btn-light btn-lg left" onClick={() => handleClick()}>
-                                    <img className="button-arrow" src={arrowLeft} alt="Press to show the previous testimonial" />
+                                    <img className="button-arrow" src={arrowLeft} tabIndex="0" alt="Press to show the previous testimonial" />
                                 </button>
                                 <button type="button" className="btn btn-light btn-lg right" onClick={() => handleClick()}>
                                     <img className="button-arrow" src={arrowRight} alt="Press to show the next testimonial" />
@@ -58,10 +58,10 @@ const Testimonials = () => {
                             </div>
                         </div>
                         <div className="card-body">
-                            <p className="card-text">{data.text}</p>
+                            <p className="card-text" tabIndex="0">{data.text}</p>
                             <div className="card-profile">
-                                <p className="card-name">{data.name}</p>
-                                <p className="card-occupation">{data.occupation}</p>
+                                <p className="card-name" tabIndex="0">{data.name}</p>
+                                <p className="card-occupation" tabIndex="0">{data.occupation}</p>
                             </div>
                         </div>
                     </div>
