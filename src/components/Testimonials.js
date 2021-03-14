@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Testimonials.css';
 
-import data from '../assets/data.json';
 import pattern1 from '../assets/images/pattern-bg.svg';
 import pattern2 from '../assets/images/pattern-curve.svg';
 import pattern3 from '../assets/images/pattern-quotes.svg';
@@ -10,24 +9,43 @@ import arrowRight from '../assets/images/icon-next.svg';
 
 const ComponentLogic = () => {
     const [ click, setClick ] = useState(false);
-    const [ id, setId ] = useState([0]);
-    
+    const [ data, setData ] = useState([]);
+    const [ isInvisible, setIsInvisible ] = useState(['', 'invisible']);
+
+    const DATA_URL = 'https://api.jsonbin.io/b/604dc26d7ffeba41c078762c';
+
+    const fetchData = async () => {
+        const response = await fetch(DATA_URL);
+
+        if(!response.ok) console.error(`An error has occurred: ${response.status}`);
+
+        const data = await response.json();
+        return data;
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            setData(await fetchData());
+        } catch(error) {
+            console.error(error);
+        }
+    });
+
     const handleClick = () => {
-        debugger;
         if(!click) setClick(true);
         else setClick(false);
     }
 
     useEffect(() => {
-        if(id.includes(0)) setId([1]);
-        else setId([0]);
-    }, [click])
+        if(isInvisible[0] === '') setIsInvisible(['invisible', 0]);
+        else setIsInvisible(['', 'invisible']);
+    }, [click]);
 
-    return { handleClick, id, click };
+    return { handleClick, data, isInvisible };
 }
 
 const Testimonials = () => {
-    const { handleClick, id, click } = ComponentLogic();
+    const { handleClick, data, isInvisible } = ComponentLogic();
 
     return (
         <div className="testimonials">
@@ -36,7 +54,7 @@ const Testimonials = () => {
             <img src={pattern3} className="pattern3" alt="background pattern" aria-hidden="true" loading="lazy" />
             {data.map(data => {
                 return (
-                    <div key={data.id} className={`card ${(data.id === '0'? '' : 'invisible') || (id.includes(0) ? 'invisible' : '')}`}>
+                    <div key={data.id} className={`card ${data.id === '0' ? isInvisible[0] : isInvisible[1]}`}>
                         <div className="card-container" >
                             <img src={data.image} className="card-img-top" alt="Profile photograph" loading="lazy" />
                             <div className="btn-group" role="group" aria-label="Basic example">
